@@ -110,8 +110,6 @@ langchain-gmail/
 
 ## ⚠️ Importante
 
-- **Nunca commite** os arquivos `credentials.json`, `token.json` e `.env`
-- Se receber erro `429 RESOURCE_EXHAUSTED`, aguarde alguns segundos ou troque o modelo para `gemini-1.5-flash`
 - O app precisa estar em modo de teste no Google Cloud para funcionar sem verificação
 
 ## 🛠️ Dependências
