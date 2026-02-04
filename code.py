@@ -11,11 +11,11 @@ from langgraph.prebuilt import create_react_agent
 # Carregar variáveis de ambiente
 load_dotenv()
 
-# Configurar credenciais do Gmail
+# declara a variável de credenciais do gmail
 credentials = get_google_credentials(
     scopes=["https://mail.google.com/"],
     token_file="token.json",
-    client_secrets_file="credentials.json",  # Agora está correto!
+    client_secrets_file="credentials.json",
 )
 
 # Construir o serviço do Gmail
@@ -30,14 +30,14 @@ llm = ChatGoogleGenerativeAI(
 )
 
 # Criar o agente com as ferramentas do Gmail
-agent = create_react_agent(llm, tools)
+agente = create_react_agent(llm, tools)
 
-# Mensagem para o agente
-pedido = f"Envie um email dizendo 'Olá' para o email {os.environ.get("EMAIL_ADDRESS2")}"
+# mensagem para o agente
+pedido = f"Envie um email dizendo 'Olá' para o email {os.environ.get("EMAIL_ADDRESS1")}"
 # Executar o agente
-for step in agent.stream({"messages": [("user", pedido)]}):
+for step in agente.stream({"messages": [("user", pedido)]}):
     if "messages" in step:
         for message in step["messages"]:
             message.pretty_print()
 
-print(f"Email enviado com sucesso para {os.environ.get("EMAIL_ADDRESS2")}")
+print(f"Email enviado com sucesso para {os.environ.get("EMAIL_ADDRESS1")}")

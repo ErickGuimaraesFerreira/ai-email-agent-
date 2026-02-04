@@ -20,7 +20,7 @@ Agente de IA que envia emails automaticamente via Gmail usando LangChain + Googl
 ### 1. Clone o repositório
 
 ```bash
-git clone <seu-repo>
+git clone https://github.com/ErickGuimaraesFerreira/ai-email-agent-
 cd langchain-gmail
 ```
 
