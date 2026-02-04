@@ -34,7 +34,7 @@ agente = create_react_agent(llm, tools)
 
 # mensagem para o agente
 pedido = f"Envie um email dizendo 'Olá' para o email {os.environ.get("EMAIL_ADDRESS1")}"
-# Executar o agente
+# executar o agente
 for step in agente.stream({"messages": [("user", pedido)]}):
     if "messages" in step:
         for message in step["messages"]:
